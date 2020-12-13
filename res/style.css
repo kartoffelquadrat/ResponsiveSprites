@@ -1,0 +1,35 @@
+#gradient {
+    background-image: linear-gradient(to bottom right, #20568f, #7e120a);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+/*remainder is appearance animations*/
+/*---------------*/
+.fade-in-fwd {
+    animation: fade-in-fwd 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in-fwd {
+    0% {
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
