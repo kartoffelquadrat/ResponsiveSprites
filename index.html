@@ -4,16 +4,19 @@
     <meta charset="utf-8">
     <title>My perfectly dimensioned svg</title>
     <link rel="stylesheet" href="res/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="acquireLayout.js"></script>
 </head>
-<body id="gradient" class="full-height">
 
-<!--div ensures the board canvas is centered, class center-fit optimizes used space-->
-    <img src='res/rounded-cropped.svg' class="fade-in-fwd">
+<!--gradient as background, no scroll bars-->
+<body id="gradient" class="full-height" onload="registerResizeListener();">
 
-<!--and some overlay, just for testing-->
-<svg class="top" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="300" cy="120" r="25" fill="yellow" />
-</svg>
+<!--the actual board with all game sprites-->
+<div class="wrapper">
+    <img id="board" src='res/board.png' class="perfect"/>
+    <img id="worldwide" src='res/worldwide.png' class="companytile worldwide"/>
+    <img src='res/sackson.png' class="companytile sackson"/>
+</div>
 
 </body>
 </html>
