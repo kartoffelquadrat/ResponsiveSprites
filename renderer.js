@@ -78,8 +78,8 @@ function render() {
 
     // Demo:
     // Place worldwide sprite on 1a:
-    relativePlaceOverlay('worldwide', 'a1', scaling);
+    relativePlaceOverlay('company-worldwide', 'tile_1a', scaling);
 
     // place sackson sprite on 5d:
-    relativePlaceOverlay('sackson', 'd5', scaling);
+    relativePlaceOverlay('company-sackson', 'tile_5d', scaling);
 }

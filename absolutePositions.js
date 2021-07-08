@@ -7,9 +7,8 @@
 absPos = {
 
     // tile positions
-    a1: {x: 603, y: 56},
-    d5: {x: 1442, y: 672}
-    // ...
+    tile_1a: {x: 603, y: 56},
+    tile_5d: {x: 1442, y: 672},
 
     // company sidebar positions
     // ...
