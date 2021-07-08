@@ -14,8 +14,8 @@ function enableRerenderOnResize() {
  */
 function computeScaling() {
     // find out the total dimensions of browser content
-    let totalSpaceEffectiveSizeX = $(window).width();
-    let totalSpaceEffectiveSizeY = $(window).height();
+    let totalSpaceEffectiveSizeX = document.getElementById("gradient").clientWidth;
+    let totalSpaceEffectiveSizeY = document.getElementById("gradient").clientHeight;
     let totalSpaceRatio =
         totalSpaceEffectiveSizeX / parseFloat(totalSpaceEffectiveSizeY);
     //console.log("Browser space X/Y dimensions: " + totalSpaceEffectiveSizeX + " / " + totalSpaceEffectiveSizeY + ",
@@ -52,12 +52,21 @@ function computeScaling() {
 
 /**
  * Places a dom element (regardless of its previous positioning) as overlay on a desired target position.
- * @param domElementName as the name of the html element to be repositioned. (All UI elements are loaded from the start
+ * @param domElementId as the name of the html element to be repositioned. (All UI elements are loaded from the start
  *     in the DOM tree, although not-needed elements are by default rendered outside the visible canvas and may
  *     therefore be invisible.)
- * @param absolutePositionIdentifier as the target position provided in the "absolutePosition" properties file.
+ * @param posId as the target position provided in the "absolutePosition" properties file.
+ * @param scaling as the margin and zoom information to be used when placing the overlay.
  */
-function relativePlaceOverlay(domElementName, absolutePositionIdentifier) {
+function relativePlaceOverlay(domElementId, posId, scaling) {
+
+    const elementOriginalWidth =
+        document.querySelector("#"+domElementId).naturalWidth;
+    const element = document.getElementById(domElementId);
+
+    element.style.left = (scaling.margin + absPos[posId].x * scaling.zoom)+'px';
+    element.style.top = (absPos[posId].y * scaling.zoom)+'px';
+    element.style.width = (elementOriginalWidth * scaling.zoom)+'px';
 }
 
 /* This function is invoked on every window resize. It will query the effective backdrop size and ensure all additional sprites are displayed on their respective relative position and scaling. */
@@ -65,20 +74,12 @@ function render() {
     console.log("Re-rendering the game UI.");
 
     // Determine zoom and margin for dynamic positioning of overlay elements
-    let scaling = computeScaling();
+    const scaling = computeScaling();
 
     // Demo:
-    // Place worldwide sprite on 1a,
-    const worldwideOriginalWidth =
-        document.querySelector("#worldwide").naturalWidth;
-    $("#worldwide").css("left", scaling.margin + absPos.a1.x * scaling.zoom);
-    $("#worldwide").css("top", 0 + absPos.a1.y * scaling.zoom);
-    $("#worldwide").css("width", worldwideOriginalWidth * scaling.zoom); // UNSURE why the 1.3 is needed. => Solved.
-                                                                         // Sprite size is inconsistent.
+    // Place worldwide sprite on 1a:
+    relativePlaceOverlay('worldwide', 'a1', scaling);
 
-    // place sackson on 5d
-    const sacksonOriginalWidth = document.querySelector("#sackson").naturalWidth;
-    $("#sackson").css("left", scaling.margin + absPos.d5.x * scaling.zoom);
-    $("#sackson").css("top", 0 + absPos.d5.y * scaling.zoom);
-    $("#sackson").css("width", sacksonOriginalWidth * scaling.zoom);
+    // place sackson sprite on 5d:
+    relativePlaceOverlay('sackson', 'd5', scaling);
 }
