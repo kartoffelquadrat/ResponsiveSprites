@@ -19,7 +19,7 @@ This repository serves as a minimal sample to provide reusable code for a respon
 The demo uses three sample sprites of the board game *[Acquire](https://boardgamegeek.com/boardgame/5/acquire)*.
 
  * A backdrop. (Grid with available company / tile positions)
- * Two companies. (laced on the grid)
+ * Two companies. (Placed on the grid)
 
 ![elements](markdown/elements.gif)
 
