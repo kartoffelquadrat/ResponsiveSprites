@@ -27,8 +27,8 @@ The demo uses three sample sprites of the board game *[Acquire](https://boardgam
 
 For implementation internals, inspect the following files:
 
- * [```index.html```](index.html): Minimal DOM tree defining the used sprites.
- * [```renderer.js```](renderer.js): Client side computations to convert absolute layout coordinates into relative coordinated, based on an optimized responsive UI fit.
+ * [```index.html```](index.html): Minimal DOM tree referencing sprites as ```img``` elements.
+ * [```renderer.js```](renderer.js): Client side computations to convert absolute layout coordinates into relative coordinates, based on an optimized responsive UI fit.
  * [```absolutePositions.js```](absolutePositions.js): Properties file to provide absolute overlay element coorindates converted by the renderer.
  * [```style.css```](style.css): Enables responsive backdrop layout and enables relative element overlaying.
 
