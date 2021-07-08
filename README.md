@@ -37,7 +37,7 @@ For implementation internals, inspect the following files:
 This section exemplifies how new sprites can be added.
 
  1. Add a new sprite resource.
-    * The added sprite muste be up-tp scale with the [backdrop](sprites/backdrop.png).
+    * The added sprite must be on scale with the [backdrop](sprites/backdrop.png).
     * For convenience the required sprite is already present, at [```sprites/tiles/6c.png```](sprites/tiles/6c.png)
  2. Determine the absolute pixel position.
     * Determine the x/y pixel distance of the sprite's target origin from the backdrop origin.
