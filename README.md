@@ -25,7 +25,7 @@ The demo uses three sample sprites of the board game *[Acquire](https://boardgam
 
 ## Important files
 
-For implementation internals, inspect the following files:
+For implementation details, inspect the following files:
 
  * [```index.html```](index.html): Minimal DOM tree referencing sprites as ```img``` elements.
  * [```renderer.js```](renderer.js): Client side computations to convert absolute layout coordinates into relative coordinates, based on an optimized responsive UI fit.
