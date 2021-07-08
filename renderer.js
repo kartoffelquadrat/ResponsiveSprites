@@ -10,7 +10,7 @@ function enableRerenderOnResize() {
  * @return An object containing two values: "zoom" and "margin". "zoom" tells the linear multiplication factor to be
  *     applied to a future overlay sprite, so that it is to scale with the currently rendered backdrop. "margin" tells
  *     the pixel offset left of the backdrop sprite that is used to convert absolute browser canvas positions into
- *     absolute backdrop canvas coordinated.
+ *     absolute backdrop canvas coordinates.
  */
 function computeScaling() {
     // find out the total dimensions of browser content
