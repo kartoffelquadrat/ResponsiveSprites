@@ -3,19 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>My perfectly dimensioned svg</title>
-    <link rel="stylesheet" href="res/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="acquireLayout.js"></script>
+
+    <!-- UI logic related to dynamic positioning of overlay UI elements-->
+    <script src="renderer.js"></script>
+
+    <!-- Properties file with all absolute positions (unscaled backdrop serves as coordinate system) of overlay elements.-->
+    <script src="absolutePositions.js"></script>
+
 </head>
 
 <!--gradient as background, no scroll bars-->
-<body id="gradient" class="full-height" onload="registerResizeListener();">
+<body id="gradient" class="full-height" onload="enableRerenderOnResize(); render()">
 
 <!--the actual board with all game sprites-->
-<div class="wrapper">
-    <img id="board" src='res/board.png' class="perfect"/>
-    <img id="worldwide" src='res/worldwide.png' class="companytile worldwide"/>
-    <img src='res/sackson.png' class="companytile sackson"/>
+<div id="spriteContainer">
+    <img id="board" src='sprites/backdrop.png'/>
+    <img id="worldwide" src='sprites/companies/worldwide.png' class="overlay"/>
+    <img id="sackson" src='sprites/companies/sackson.png' class="overlay"/>
 </div>
 
 </body>
