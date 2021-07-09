@@ -29,7 +29,7 @@ For implementation details, inspect the following files:
 
  * [```index.html```](index.html): Minimal DOM tree referencing sprites as ```img``` elements.
  * [```renderer.js```](renderer.js): Client side computations to convert absolute layout coordinates into relative coordinates, based on an optimized responsive UI fit.
- * [```absolutePositions.js```](absolutePositions.js): Properties file to provide absolute overlay element coorindates converted by the renderer.
+ * [```absolutePositions.js```](absolutePositions.js): Properties file to provide absolute overlay element coordinates converted by the renderer.
  * [```style.css```](style.css): Enables responsive backdrop layout and enables relative element overlaying.
 
 ## Usage
@@ -62,7 +62,7 @@ This section exemplifies how new sprites can be added.
    <div id="spriteContainer">
        <img id="board" src='sprites/backdrop.png'/>
        ...
-       <img id=tile-6c" src='sprites/tiles/6c.png' class="overlay"/>
+       <img id="tile-6c" src='sprites/tiles/6c.png' class="overlay"/>
    </div>
 ```
  5. Make sure your sprite is rendered.
