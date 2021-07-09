@@ -37,7 +37,7 @@ For implementation details, inspect the following files:
 This section exemplifies how new sprites can be added.
 
  1. Add a new sprite resource.
-    * The added sprite must be on scale with the [backdrop](sprites/backdrop.png).
+    * The added sprite must be on scale with the original [backdrop file](sprites/backdrop.png).
     * For convenience the required sprite is already present, at [```sprites/tiles/6c.png```](sprites/tiles/6c.png)
  2. Determine the absolute pixel position.
     * Determine the x/y pixel distance of the sprite's target origin from the backdrop origin.
@@ -53,10 +53,10 @@ This section exemplifies how new sprites can be added.
        ...
    };
 ```
- 4. Add the sprite as image as child of the ```spriteContainer```DOM element.
+ 4. Add a new ```img``` element to the ```spriteContainer``` DOM element.
     * Make sure it extends the ```overlay``` CSS class.
     * Give it a unique id, e.g.: ```tile-6c```.
-    * Add the sprite location as ```src``` attribute.
+    * Use the ```src``` attribute to reference the original sprite location.
     * Example:  
 ```html
    <div id="spriteContainer">
@@ -67,7 +67,7 @@ This section exemplifies how new sprites can be added.
 ```
  5. Make sure your sprite is rendered.
     * Edit ```renderer.js:render()```.
-    * Add a call to ```relativePlaceOverlay(domElementId, podId, scaling)```, where:
+    * Add a call to ```relativePlaceOverlay(domElementId, posId, scaling)```, where:
       * ```domElementId``` matches the id string you chose. (Step 4)
       * ```posId``` matches the absolute position entry identifier. (Step 3)
       * ```scaling``` is the result of ```getScaling();```.
